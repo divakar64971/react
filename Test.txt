@@ -1,0 +1,143 @@
+Write a function in Typescript, which receives an integer number and has the next logic:
+a) it prints "candy" if number is divisible by 2;
+b) it prints "bar" if number is divisible by 11;
+c) it prints "candybar" if number is divisible by 22;
+d) it prints the value of number for all other cases;
+note: number is a positive integer number;
+
+
+Ans 1 :
+function getMessage(num:number):string {
+    if(num>0) {
+        if(num%2 == 0) {
+        return "candy";
+        }else if(num%11 == 0) {
+            return "bar";
+        }else if(num%2 == 0 && num%11 == 0) {
+            return "candybar";
+        }
+    }            
+    return ""+num;
+}
+
+Ans 2:
+
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
+<style>
+body {
+ font-family: 'Lato', sans-serif;
+ background-color:#0277bd;
+ width :50%;
+ margin:auto 20%;
+ display: relative;
+ color: white;
+ font-size:16px;
+ padding: 4px;
+
+}
+input ,textarea{
+	height: 30px;
+    width:85%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    border: 1px solid white;
+    font-family: sans-serif;
+    background-color:#0277bd;
+    color: white;
+    display:block;
+    padding : 10px;
+}
+textarea{
+	color:grey;
+    font-weight:20px;
+    height: 100px;
+}
+</style>
+</head>
+<body>
+<div>
+	<label>Your full given name: </label>
+	<input type="text" value = "John Doe"/>
+</div>
+<div style="width:100%;">
+  <div style="width:38%; display:inline-block;">
+      <label> Date of Birth</label>
+      <input type="date" value="January 7, 1984"/>
+  </div>
+  <div style="width:40%; display:inline-block">
+      <label> Country of residence or citizenship </label>
+      <input type="text" value="Canada"/>
+  </div>
+</div>
+<div>
+	<label> What School do you plan to attend?</label>
+    <input type="text" value="University of British Columbia"/>
+</div>
+<div>
+	<label> Please take a moment to describe your intended area of study</label>
+    <textarea type="text" value="University of British Columbia" placeholder="Enter Details here"></textarea>
+</div>
+
+</body>
+
+</html>
+
+
+
+Ans 3:
+if (recipe == 'SPANISH') {
+   fudge = SPANISH_FUDGE;
+   amt = base * fudge;
+ }else if(recipe == 'FRENCH') {
+ 	fudge = FRENCH_FUDGE;
+ 	amt = base * fudge;
+ }else if(recipe == 'ENGLISH') {
+ 	fudge = ENGLISH_FUDGE;
+ 	amt = base * fudge;
+ }else{
+ 	fudge = 1;
+   	amt = base;
+ }
+ sugar = 2 * Math.floor(amt) + Math.ceil(amt) * 1.17;
+ if (recipe == 'FRENCH') {
+   chocolate = 7;
+ }
+
+Ans 4 :
+
+var server_echo;
+var json = {
+    json: JSON.stringify({
+        a: 1,
+        b: 2
+    }),
+    delay: 3
+};
+fetch('/echo/', {
+    method: 'post',
+    headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+    },
+    body: 'json=' + encodeURIComponent(json.json) + '&delay=' + json.delay
+})
+.then(function (response) {
+    server_echo = response.data;
+    return response.data;
+})
+.then(function (result) {
+    alert(result);
+})
+.catch (function (error) {
+    console.log('Request failed', error);
+});
+server_echo.forEach(
+    element => console.log(element)
+)
+
+
+
